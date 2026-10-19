@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOCNGUDOFTU - The October Issue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#f5f3ef',
+                        'cream-dark': '#e8e5df',
+                        'dark-text': '#2a2a2a',
+                        'forest-green': '#1f342b',
+                        'burgundy': '#5c1f26',
+                        'muted-gold': '#b59e72'
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'body': ['"Lora"', 'serif'],
+                        'signature': ['"Great Vibes"', 'cursive'],
+                        'handwriting': ['"Caveat"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f5f3ef;
+            color: #2a2a2a;
+            overflow-x: hidden;
+        }
+
+        /* Smooth reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
+        /* Custom scrollbar for an elegant touch */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f3ef; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1cbc1; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a298; 
+        }
+
+        /* Image hover effects */
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+        .img-hover-zoom img {
+            transition: transform 0.8s ease;
+        }
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Magazine specific styles */
+        .magazine-line {
+            border-bottom: 1px solid #d1cbc1;
+        }
+
+        /* Polaroid Effect */
+        .polaroid {
+            background: #fff;
+            padding: 1rem 1rem 4rem 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+        .polaroid:hover {
+            transform: scale(1.02) rotate(0deg) !important;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+        .polaroid-tape {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 80px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="font-body antialiased">
+
+    <!-- Section 1: Cover (Hero) -->
+    <section class="min-h-[100svh] w-full flex flex-col lg:flex-row items-center justify-center p-6 md:p-12 gap-8 lg:gap-12 bg-cream">
+        <!-- Left Image (Group Photo) -->
+        <div class="w-full lg:w-1/2 h-[50vh] sm:h-[60vh] lg:h-[85vh] img-hover-zoom shadow-lg reveal mt-12 lg:mt-0 order-2 lg:order-1">
+            <img src="group1.jpg" alt="Group Photo" class="w-full h-full object-cover object-center rounded-sm">
+        </div>
+        
+        <!-- Right Content -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-between h-full py-4 lg:py-8 reveal delay-200 order-1 lg:order-2">
+            <div class="mb-8 lg:mb-12 border-b border-gray-300 pb-6 lg:pb-8 relative">
+                <h2 class="text-xs lg:text-sm tracking-[0.2em] text-gray-500 uppercase mb-2">Vol. 01 - Số Đặc Biệt</h2>
+                <h1 class="font-serif text-6xl sm:text-3xl lg:text-7xl font-semibold tracking-tighter mb-2 lg:mb-4 text-dark-text">HOCNGUDOFTU</h1>
+                <div class="relative lg:absolute lg:right-0 lg:top-12 text-left lg:text-right mt-2 lg:mt-0">
+                    <p class="font-serif italic text-lg sm:text-xl lg:text-2xl text-gray-600">The October Issue</p>
+                    <p class="text-[10px] sm:text-xs tracking-widest text-gray-400 uppercase mt-1">20 Tháng Mười, 2026 - Hà Nội</p>
+                </div>
+            </div>
+
+            <div class="mb-10 lg:mb-16">
+                <p class="text-xs lg:text-sm tracking-widest uppercase text-gray-500 mb-2">Dành tặng</p>
+                <h3 class="font-serif text-3xl sm:text-4xl lg:text-5xl mb-4">Những Nàng Thơ</h3>
+                <p class="text-gray-600 italic text-sm lg:text-base max-w-md leading-relaxed">
+                    Dành cho ba người con gái tuyệt vời nhất - những mảnh ghép hoàn hảo tạo nên khung hình thanh xuân này?
+                </p>
+            </div>
+
+            <div class="w-full max-w-sm">
+                <p class="text-xs tracking-[0.2em] font-semibold uppercase mb-4 text-gray-400">Trong số này</p>
+                <ul class="space-y-3 text-sm font-serif">
+                    <li class="flex justify-between items-end magazine-line pb-1">
+                        <span><span class="text-xs text-gray-400 mr-2 font-sans">01</span>Vũ Phương Hà (heheheheheehcl)</span>
+                        <span class="text-xs text-gray-400 font-sans">tr. 02</span>
+                    </li>
+                    <li class="flex justify-between items-end magazine-line pb-1">
+                        <span><span class="text-xs text-gray-400 mr-2 font-sans">02</span>Vũ Hoàng Trang (etwbf)</span>
+                        <span class="text-xs text-gray-400 font-sans">tr. 06</span>
+                    </li>
+                    <li class="flex justify-between items-end magazine-line pb-1">
+                        <span><span class="text-xs text-gray-400 mr-2 font-sans">03</span>Nguyễn Minh Ngọc (sybau Nguyễn)</span>
+                        <span class="text-xs text-gray-400 font-sans">tr. 10</span>
+                    </li>
+                    <li class="flex justify-between items-end magazine-line pb-1">
+                        <span><span class="text-xs text-gray-400 mr-2 font-sans">04</span> Góc Kỷ Niệm</span>
+                        <span class="text-xs text-gray-400 font-sans">tr. 12</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segment 1: Person 1 -->
+    <section class="min-h-screen w-full flex flex-col lg:flex-row items-center p-6 md:p-12 gap-8 lg:gap-12 bg-cream border-t border-gray-300">
+        <!-- Image -->
+        <div class="w-full lg:w-5/12 h-[60vh] lg:h-[80vh] img-hover-zoom order-1 lg:order-1 reveal shadow-md">
+            <img src="ha.jpg" alt="Person 1" class="w-full h-full object-cover rounded-sm">
+        </div>
+        
+        <!-- Content -->
+        <div class="w-full lg:w-7/12 order-2 lg:order-2 lg:pl-12 reveal delay-200">
+            <p class="text-xs tracking-[0.2em] font-semibold uppercase mb-4 text-gray-400">Chương 01</p>
+            <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl mb-4 lg:mb-6 leading-tight">Vũ Phương Hà</h2>
+            <p class="text-gray-500 italic text-sm lg:text-base mb-8 lg:mb-12 max-w-lg leading-relaxed">
+                "Nét đẹp kiêu sa, tĩnh lặng nhưng chứa đựng chiều sâu của một tâm hồn mộng mơ."
+            </p>
+
+            <div class="space-y-6 max-w-lg">
+                <div class="magazine-line pb-4">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">01</span> Audio mất não</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">Sẵn sàng nghe audio 100 tỉ tiếng mà không ăn không ngủ.</p>
+                </div>
+                <div class="magazine-line pb-4">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">02</span> Non-binary / Not interested in it</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">Nhẹ nhàng, thanh tao, mang lại cảm giác bình yên đến lạ??</p>
+                </div>
+                <div class="magazine-line pb-4 border-transparent">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">03</span>Nails</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">Tinh tế, hiện đại, thể hiện sự cá tính và phong cách riêng biệt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segment 2: Person 2 (Reversed on Desktop) -->
+    <section class="min-h-screen w-full flex flex-col lg:flex-row items-center p-6 md:p-12 gap-8 lg:gap-12 bg-cream-dark border-t border-gray-300">
+        <!-- On mobile: Image first. On Desktop: Text left, Image right. -->
+        <!-- Content -->
+        <div class="w-full lg:w-7/12 order-2 lg:order-1 lg:pr-12 text-left lg:text-right flex flex-col items-start lg:items-end reveal delay-200">
+            <p class="text-xs tracking-[0.2em] font-semibold uppercase mb-4 text-gray-400">Chương 02</p>
+            <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl mb-4 lg:mb-6 leading-tight">Vũ Hoàng Trang</h2>
+            <p class="text-gray-500 italic text-sm lg:text-base mb-8 lg:mb-12 max-w-lg leading-relaxed">
+                "Hư nhưng không hỏng, tinh nghịch nhưng vẫn giữ được nét duyên dáng và sự thanh lịch, ngu ngốc nhưng vẫn đáng yêu."
+            </p>
+
+            <div class="space-y-6 max-w-lg w-full text-left">
+                <div class="magazine-line pb-4">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">01</span>Khoai tây</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">A cat lover.</p>
+                </div>
+                <div class="magazine-line pb-4">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">02</span>Năng lượng</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">Tích cực, đầy sức sống và luôn lan tỏa niềm vui đến mọi người xung quanh.</p>
+                </div>
+                <div class="magazine-line pb-4 border-transparent">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">03</span>Thú vui không lành mạnh</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">Một sở thích thú vị nhưng cần được kiểm soát để đảm bảo sức khỏe. (iykyk)</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Image -->
+        <div class="w-full lg:w-5/12 h-[60vh] lg:h-[80vh] img-hover-zoom order-1 lg:order-2 reveal shadow-md">
+            <img src="trang.jpg" alt="Person 2" class="w-full h-full object-cover rounded-sm">
+        </div>
+    </section>
+
+    <!-- Segment 3: Person 3 -->
+    <section class="min-h-screen w-full flex flex-col lg:flex-row items-center p-6 md:p-12 gap-8 lg:gap-12 bg-cream border-t border-gray-300">
+        <!-- Image -->
+        <div class="w-full lg:w-5/12 h-[60vh] lg:h-[80vh] img-hover-zoom order-1 lg:order-1 reveal shadow-md">
+            <img src="sybau.jpg" alt="Person 3" class="w-full h-full object-cover rounded-sm">
+        </div>
+        
+        <!-- Content -->
+        <div class="w-full lg:w-7/12 order-2 lg:order-2 lg:pl-12 reveal delay-200">
+            <p class="text-xs tracking-[0.2em] font-semibold uppercase mb-4 text-gray-400">Chương 03</p>
+            <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl mb-4 lg:mb-6 leading-tight">Nguyễn Minh Ngọc</h2>
+            <p class="text-gray-500 italic text-sm lg:text-base mb-8 lg:mb-12 max-w-lg leading-relaxed">
+                "Một tờ giấy trắng tinh, nhưng lại chứa đựng những nét vẽ tinh tế và đầy cảm xúc. Đem lại cảm giác bình yên và sự tò mò về những câu chuyện chưa kể."
+            </p>
+
+            <div class="space-y-6 max-w-lg">
+                <div class="magazine-line pb-4">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">01</span>Labubu, Nudaeng, Smiski</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">90% lương là để mua đồ chơi ¯\_(ツ)_/¯</p>
+                </div>
+                <div class="magazine-line pb-4">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">02</span> Nụ cười</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">Hé mở duyên dáng, tinh tế làm xiêu lòng bao ánh nhìn. (Ô ô to quá)</p>
+                </div>
+                <div class="magazine-line pb-4 border-transparent">
+                    <h4 class="font-serif text-lg lg:text-xl mb-2"><span class="text-xs text-gray-400 font-sans mr-3">03</span>Con xanh xanh</h4>
+                    <p class="text-sm text-gray-600 italic pl-8 leading-relaxed">Những icon thể hiện tất cả những cảm xúc không thể diễn tả bằng lời.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Kỷ niệm (Memories) -->
+    <section class="py-20 lg:py-32 px-6 md:px-12 bg-[#ebe8e1] border-t border-gray-300 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-xs tracking-[0.2em] font-semibold uppercase mb-4 text-gray-500">Chương Cuối</p>
+                <h2 class="font-serif text-5xl sm:text-6xl lg:text-7xl mb-4 text-dark-text">Kỷ niệm</h2>
+                <p class="font-body italic text-gray-600 max-w-xl mx-auto">Những khoảnh khắc được lưu giữ cẩn thận, không màng đến sự hoàn hảo.</p>
+            </div>
+
+            <!-- Polaroid Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 mt-12">
+                
+                <!-- Photo 1 -->
+                <div class="polaroid transform -rotate-2 reveal delay-100 mx-auto w-full max-w-[320px]">
+                    <div class="polaroid-tape"></div>
+                    <img src="mem1.jpg" alt="Memory 1" class="w-full h-64 object-cover">
+                    <div class="absolute bottom-6 left-0 w-full text-center px-4">
+                        <p class="font-handwriting text-2xl text-gray-800">Ngày thu Hà Nội</p>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="polaroid transform rotate-3 sm:mt-12 reveal delay-200 mx-auto w-full max-w-[320px]">
+                    <div class="polaroid-tape"></div>
+                    <img src="mem2.jpg" alt="Memory 2" class="w-full h-64 object-cover">
+                    <div class="absolute bottom-6 left-0 w-full text-center px-4">
+                        <p class="font-handwriting text-2xl text-gray-800">Học với chả hành</p>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="polaroid transform -rotate-1 lg:mt-6 reveal delay-300 mx-auto w-full max-w-[320px]">
+                    <div class="polaroid-tape"></div>
+                    <img src="mem3.jpg" alt="Memory 3" class="w-full h-64 object-cover filter grayscale hover:grayscale-0 transition duration-500">
+                    <div class="absolute bottom-6 left-0 w-full text-center px-4">
+                        <p class="font-handwriting text-2xl text-gray-800">Chuyến đi Đà Nẵng</p>
+                    </div>
+                </div>
+
+                <!-- Photo 4 (Visible mainly to balance grid on larger screens or wrap nicely) -->
+                <div class="polaroid transform rotate-2 sm:-rotate-2 lg:hidden xl:block xl:col-start-2 xl:-mt-12 reveal mx-auto w-full max-w-[320px]">
+                    <div class="polaroid-tape"></div>
+                    <img src="mem4.jpg" alt="Memory 4" class="w-full h-64 object-cover">
+                    <div class="absolute bottom-6 left-0 w-full text-center px-4">
+                        <p class="font-handwriting text-2xl text-gray-800">ESP121</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Quote (Green) -->
+    <section class="min-h-[60vh] w-full bg-forest-green flex flex-col items-center justify-center p-8 relative overflow-hidden">
+        <!-- Faint decorative lines -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 50px 50px;"></div>
+        
+        <div class="text-center z-10 reveal w-full max-w-4xl mx-auto">
+            <p class="text-gray-300/60 text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-6 sm:mb-8">Ngày của những thiên thần</p>
+            <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-cream italic mb-6 sm:mb-8 leading-tight">Các chú là<br>bạn tôi.</h2>
+            <div class="w-full flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <div class="hidden sm:block h-[1px] w-12 md:w-24 bg-cream/40"></div>
+                <p class="text-cream/80 italic text-xs sm:text-sm md:text-base text-center px-4">Lý do tôi xàm l mỗi ngày — và lý do có số tạp chí này.</p>
+                <div class="hidden sm:block h-[1px] w-12 md:w-24 bg-cream/40"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Editor's Note (Burgundy) -->
+     <!-- Section 6: Editor's Note (Burgundy) -->
+    <section class="min-h-screen w-full bg-burgundy flex flex-col lg:flex-row items-center justify-center p-6 sm:p-12 lg:p-16 gap-8 lg:gap-10">
+        <!-- Left: Picture Holder -->
+        <div class="w-full sm:w-2/3 lg:w-1/4 max-w-xs mx-auto lg:mx-0 reveal delay-100">
+            <div class="bg-[#fcfaf7] p-3 sm:p-4 shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500 relative">
+                <!-- Small tape on the photo -->
+                <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-16 h-5 bg-white/40 backdrop-blur-sm shadow-sm rotate-1"></div>
+                <img src="cortis.jpg" alt="Author or Special Moment" class="w-full aspect-[5/5] object-cover filter contrast-125 sepia-[.15] rounded-sm">
+            </div>
+        </div>
+
+        <!-- Middle: Title -->
+        <div class="w-full lg:w-1/5 flex flex-col items-center text-center text-cream reveal">
+            <p class="text-xs tracking-[0.2em] uppercase opacity-70 mb-2">Editor's Note</p>
+            <h2 class="font-serif text-5xl sm:text-6xl italic mb-4">Lời tái<br class="hidden lg:block">bút</h2>
+            <div class="w-12 h-[2px] bg-cream opacity-50 mb-4"></div>
+            <p class="text-[10px] tracking-widest opacity-50 uppercase">20 . THÁNG MƯỜI . 2026</p>
+        </div>
+
+        <!-- Right: The Note Block -->
+        <div class="w-full lg:w-5/12 max-w-xl mx-auto lg:mx-0 relative reveal delay-200">
+            <!-- Paper effect container -->
+            <div class="bg-[#fcfaf7] p-8 sm:p-10 lg:p-12 shadow-2xl relative text-dark-text">
+                <!-- Pseudo-tape effect top center -->
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-6 bg-white/50 backdrop-blur-sm shadow-sm rotate-2"></div>
+                
+                <div class="space-y-4 sm:space-y-6 text-sm sm:text-base leading-relaxed text-gray-700 font-body">
+                    <p class="italic text-center text-gray-400 mb-6 sm:mb-8 font-serif text-xs sm:text-sm">Toàn bộ nội dung được biên tập bằng tất cả sự trân trọng.</p>
+                    
+                    <p>Gửi bạn,</p>
+                    <p>Nếu mọi người đã lướt xem đến những dòng chữ cuối cùng này, mong mọi người hãy mỉm cười thật tươi. Hôm nay là ngày để tôn vinh sự rực rỡ, ngọt ngào và bản lĩnh của các bạn.</p>
+                    
+                    <p>Cảm ơn vì đã luôn là những mảnh ghép tuyệt vời mang đến màu sắc và niềm vui. Chúc các bạn một ngày 20/10 ngập tràn hoa hồng, quà tặng và những lời yêu thương chân thành nhất.</p>
+                    
+                    <p>P.S. Cảm ơn tôi vì đã luôn ở bên cạnh các bạn.</p>
+                </div>
+
+                <!-- Signature -->
+                <div class="mt-10 sm:mt-12 flex flex-col items-end pr-4 sm:pr-8">
+                    <p class="italic text-gray-500 mb-2 font-serif text-sm">Thương mến,</p>
+                    <p class="font-signature text-4xl sm:text-5xl lg:text-6xl text-burgundy transform -rotate-2">Kẹt</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#111] py-8 text-center text-[#666] text-[10px] sm:text-xs tracking-widest uppercase">
+        <p>&copy; 2026 The October Issue. Designed with love in Hanoi.</p>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
